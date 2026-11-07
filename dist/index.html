@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="demo-runtime" content="browser">
+  <meta name="description" content="An independent product experiment: match a freshness promise to when a customer plans to cook. All data is simulated.">
+  <title>Fresh for your plans — a Licious concept</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23c92c43'/%3E%3Cpath d='M12 29V11h17v5H17v3h10v5H17v5' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="notice"><span class="notice-dot"></span> INDEPENDENT CONCEPT <span class="notice-divider">/</span> All inventory, dates and promises are simulated.</div>
+  <header class="site-header wrap">
+    <a class="brand" href="#"><span class="brand-mark" aria-hidden="true">f.</span><span>fresh <i>for</i> your plans<small>A product experiment for Licious</small></span></a>
+    <nav aria-label="Main"><a href="#case">The business question <span aria-hidden="true">↗</span></a><a class="outline-link" href="./proposal.html">Read the pitch <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main>
+    <section class="intro wrap">
+      <div class="eyebrow"><span class="tiny-line"></span> A BETTER QUESTION AT CHECKOUT</div>
+      <h1>Fresh for <em>when</em><br>you plan to cook.</h1>
+      <div class="intro-side"><span class="intro-index">01 / THE EXPERIENCE</span><p>Pick your mealtime. See a delivery option that can support it.</p><span class="clock-label"><span aria-hidden="true">◷</span> Demo clock: Sat 7 Nov, 10 am IST</span></div>
+    </section>
+
+    <section class="demo wrap" id="demo" aria-label="Interactive freshness promise demo">
+      <aside class="product-panel">
+        <div class="product-top"><span class="micro">THE SAMPLE BASKET</span><span class="sample-pill">Illustrative product</span></div>
+        <div class="product-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <svg viewBox="0 0 360 280" role="presentation">
+            <defs><linearGradient id="tray" x2="1" y2="1"><stop stop-color="#f7f4e9"/><stop offset="1" stop-color="#d8dbcc"/></linearGradient><linearGradient id="meat" x2="1" y2="1"><stop stop-color="#f4c1a8"/><stop offset="1" stop-color="#dd947f"/></linearGradient><filter id="shadow"><feDropShadow dx="1" dy="14" stdDeviation="9" flood-color="#385a43" flood-opacity=".17"/></filter></defs>
+            <g transform="rotate(-9 180 140)" filter="url(#shadow)"><rect x="67" y="30" width="226" height="218" rx="24" fill="url(#tray)" stroke="#fdfdf6" stroke-width="6"/><rect x="81" y="44" width="198" height="190" rx="16" fill="#e9ddca"/>
+            <g fill="url(#meat)" stroke="#e9b39b" stroke-width="2"><path d="M102 72q20-24 47-2t0 49q-39 9-47-18z"/><path d="M167 63q29-10 43 13t-18 38q-29 9-37-12z"/><path d="M222 76q28-12 37 13t-7 34q-30 5-37-15z"/><path d="M103 125q18-23 38-8t9 43q-26 18-49-2z"/><path d="M172 123q24-22 43 3t-3 38q-34 9-40-13z"/><path d="M225 137q25-22 39 4t-6 38q-36 5-33-22z"/></g>
+            <path d="M111 78l16 17M174 75l15 14M111 132l14 19M184 136l13 15" stroke="#f8d6c1" stroke-width="5" stroke-linecap="round"/>
+            <rect x="70" y="180" width="220" height="57" fill="#fffdf5"/><text x="90" y="199" fill="#264c39" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="2">CHICKEN CURRY CUT</text><text x="90" y="222" fill="#264c39" font-family="Georgia,serif" font-size="20">Made for your mealtime.</text><circle cx="264" cy="204" r="13" fill="#cb3046"/><text x="259" y="209" font-family="Georgia,serif" fill="white" font-size="17">f.</text></g>
+          </svg>
+          <div class="art-note">A promise you can plan around.</div>
+        </div>
+        <div class="product-info"><div><h2>Chicken curry cut</h2><p>500 g <span>·</span> Bone-in <span>·</span> Unseasoned</p></div><span class="sample-price">₹220<small>Sample price</small></span></div>
+        <div class="product-foot"><span class="shield" aria-hidden="true">✓</span><p>Same product. The delivery promise adapts to your plans.</p></div>
+      </aside>
+
+      <div class="choice-panel">
+        <div class="step-label"><span>01</span> YOUR MEALTIME</div><h2>When will you cook?</h2>
+        <div class="segmented" role="group" aria-label="Cooking time"><button data-cook="tonight" aria-pressed="true">Tonight<small>Sat, 7 pm</small></button><button data-cook="tomorrow" aria-pressed="false">Tomorrow<small>Sun, 7 pm</small></button><button data-cook="monday" aria-pressed="false">Monday<small>Mon, 7 pm</small></button></div>
+        <div class="delivery-label"><label for="slot">Preferred delivery</label><span>All times in IST</span></div>
+        <div class="select-wrap"><span aria-hidden="true">◷</span><select id="slot"><option value="express">Today, 10:30 am · in 30 minutes</option><option value="evening">Today, 5 pm · evening delivery</option><option value="nextday">Tomorrow, 10 am · morning delivery</option></select><span aria-hidden="true">⌄</span></div>
+        <div id="promise" class="promise" aria-live="polite" aria-atomic="true"></div>
+        <div class="action-row"><button id="reserve" class="primary">Reserve a demo pack <span aria-hidden="true">→</span></button><button id="reset" class="text-button">Reset demo</button></div>
+        <p class="under-action">A simulated 90-second hold. No purchase or payment.</p>
+      </div>
+    </section>
+
+    <section class="lab wrap" aria-label="Engineering demonstration">
+      <div class="lab-heading"><div><span class="eyebrow">02 / BEHIND THE PROMISE</span><h2>A useful promise needs a reliable decision.</h2></div><button id="details-toggle" class="outline-link" aria-expanded="false" aria-controls="engineering">Inspect the decision <span aria-hidden="true">+</span></button></div>
+      <div class="quick-scenarios"><span>TRY A SCENARIO</span><button data-scenario="tonight">01 <strong>Cook tonight</strong><span>↗</span></button><button data-scenario="tomorrow">02 <strong>Plan tomorrow</strong><span>↗</span></button><button data-scenario="quality">03 <strong>A quality status changes</strong><span>↗</span></button></div>
+      <div id="engineering" class="engineering" hidden>
+        <div class="engineering-toolbar"><span id="runtime-label" class="runtime"></span><label class="hold-toggle"><input type="checkbox" id="quality-hold"> Simulate a quality hold on batch B</label><button id="refresh" class="text-button">Refresh the promise ↻</button></div>
+        <div id="stale-alert" class="stale-alert" hidden>A batch status changed after the quote. Try accepting the existing promise to see revalidation block it.</div>
+        <div class="table-scroll"><table><caption>Simulated batch decisions for the selected cooking and delivery times</caption><thead><tr><th>Batch</th><th>Available for dispatch</th><th>Use-by in fixture</th><th>Available packs</th><th>Decision</th></tr></thead><tbody id="batch-rows"></tbody></table></div>
+        <div class="decision-footer"><p>Illustrative policy: the fixture requires a 6-hour buffer after cooking time. This is a test parameter, not storage advice or a Licious policy.</p><button id="retry" class="text-button" disabled>Replay the same request ↻</button></div>
+        <div class="event-log"><span class="micro">DECISION LOG</span><ol id="events" aria-live="polite"></ol></div>
+        <p class="runtime-note" id="runtime-note"></p>
+      </div>
+    </section>
+
+    <section class="case wrap" id="case">
+      <div class="case-intro"><span class="eyebrow">03 / THE BUSINESS QUESTION</span><h2>Can certainty turn<br>plans into purchases?</h2><p>A hypothesis to test with the team. No revenue uplift has been measured.</p><a class="inline-link" href="./proposal.html">Read the experiment proposal <span aria-hidden="true">↗</span></a></div>
+      <div class="case-points"><article><span>01</span><div><h3>Help planned meals convert</h3><p>Give customers a clear promise for the time they intend to use the product.</p></div></article><article><span>02</span><div><h3>Allocate with consumption in mind</h3><p>Assign the earliest eligible batch, preserving later-dated inventory for later needs.</p></div></article><article><span>03</span><div><h3>Measure contribution, including costs</h3><p>Track delivered orders, stock write-offs, picking constraints and guarantee costs.</p></div></article></div>
+    </section>
+    <section class="pilot wrap"><div><span class="micro">THE GATE BEFORE A PILOT</span><p>Verify the current app journey, meaningful planned-meal demand and reliable batch data with the Licious team.</p></div><a href="./proposal.html" class="outline-link">The short pitch <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="wrap"><span>Independent candidate concept for discussion.</span><span>Simulated inventory · No Licious systems connected</span></footer>
+  <script type="module" src="./app.mjs"></script>
+</body></html>
