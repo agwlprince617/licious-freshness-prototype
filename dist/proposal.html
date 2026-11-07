@@ -1,12 +1,76 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The proposal — Fresh for your plans</title><link rel="stylesheet" href="./style.css"></head><body>
-<div class="notice"><span class="notice-dot"></span> INDEPENDENT CONCEPT <span class="notice-divider">/</span> A hypothesis for discussion, using simulated data.</div>
-<header class="site-header wrap"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true">f.</span><span>fresh <i>for</i> your plans<small>A product experiment for Licious</small></span></a><a class="outline-link" href="./">Try the demo ↗</a></header>
-<main class="pitch-main wrap"><span class="eyebrow">THE SHORT PROPOSAL</span><h1>A freshness promise<br>for your mealtime.</h1><p class="lead">Could a promise about usable life before purchase help customers confidently buy for the time they intend to cook?</p>
-<h2>The customer question</h2><p>For a planned meal, could a clear promise about usable product life help a customer decide what to buy and when to receive it? The prototype explores that question through cooking-time selection and batch eligibility. Whether the signed-in Licious app already supports this experience remains unverified.</p>
-<h2>The experience</h2><p>Let a customer optionally choose when they will cook. Show products and delivery slots that can meet that time using approved batch, storage and quality rules. Reserve an eligible batch and revalidate before accepting the selection.</p>
-<h2>What the prototype proves</h2><ul><li>A cooking time changes which batch and delivery slot can be promised.</li><li>The earliest eligible batch is selected, preserving later-dated inventory.</li><li>A quality hold can invalidate an earlier quote.</li><li>Reservations, retries and expiry are handled within the demo’s scope.</li></ul><p class="caption">Hosted: a browser reference model. Downloadable source: Java 21 API, tests and the same UI. All products, prices, dates, buffers and inventory are invented. No revenue effect, production scale or Licious integration has been established.</p>
-<h2>The business test</h2><p>Measure delivered-order conversion and repeat purchasing alongside contribution, inventory write-offs, picking constraints and guarantee costs. Treat all benefits as hypotheses until a controlled pilot demonstrates them.</p>
-<div class="callout"><strong>The gate before a pilot</strong><p>Confirm that this is an unmet customer need, check current app capabilities, and verify that reliable batch data can support the promise. Stop if existing capabilities or unfavorable economics rule it out.</p></div>
-<h2>The request</h2><p>I would value feedback from a product or engineering owner on whether this is a useful problem to investigate. I remain interested in contributing to Licious as a Java Backend Engineer.</p>
-<p><a href="./">Explore the prototype ↗</a> &nbsp; <a href="./source.zip">Download source and tests ↗</a></p></main>
-<footer class="wrap"><span>Independent candidate concept · Prepared 7 November 2026</span><span>No order, payment or customer data.</span></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The proposal — Buy for when you’ll cook</title>
+  <meta name="description" content="A proposed Licious experiment: match a freshness promise to the customer's cooking time. See the observed gap, proposed experience and working prototype.">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="notice"><span class="notice-dot"></span> INDEPENDENT CONCEPT <span class="notice-divider">/</span> A hypothesis for discussion, using simulated data.</div>
+  <header class="site-header wrap">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">f.</span><span>fresh <i>for</i> your plans<small>A product experiment for Licious</small></span></a>
+    <a class="outline-link" href="./#demo">Try the demo ↗</a>
+  </header>
+  <main class="pitch-main wrap">
+    <span class="eyebrow">THE PRODUCT PROPOSAL</span>
+    <h1>Buy for <em>when</em><br>you’ll cook.</h1>
+    <p class="lead">A customer planning tomorrow’s dinner needs to know whether the pack they receive will support that meal.</p>
+    <h2>What I observed</h2>
+    <p>On the public Licious wings page I reviewed, the product description gives a general four-day shelf-life instruction. I did not see a minimum remaining life at delivery or a promise covering a chosen cooking time.</p>
+    <p class="caption"><a href="https://www.licious.in/marinades/crispy-chicken-wings-7-pieces-pr_mc6l4zmw1so" target="_blank" rel="noopener noreferrer">Reviewed product page ↗</a> · Public view reviewed 7 November 2026. This is an observed gap in that view, not evidence of unsafe handling. The signed-in app and checkout remain unverified.</p>
+    <h2>What changes for the customer?</h2>
+    <div class="pitch-comparison">
+      <article class="pitch-card">
+        <span class="eyebrow">OBSERVED PUBLIC VIEW</span>
+        <h3>General shelf-life guidance</h3>
+        <p>The reviewed description provides a shelf-life instruction, without a visible promise for the customer’s intended meal.</p>
+        <blockquote>“Will the pack I receive cover tomorrow’s dinner?”</blockquote>
+      </article>
+      <article class="pitch-card pitch-card-after">
+        <span class="eyebrow">PROPOSED EXPERIENCE</span>
+        <h3>A promise matched to the meal</h3>
+        <p>The customer’s cooking time determines which products, delivery slots and batches are eligible.</p>
+        <blockquote>“This delivery option can support your selected mealtime.”</blockquote>
+      </article>
+    </div>
+    <p class="pitch-bridge">A delivery slot answers <strong>when it arrives.</strong><br>The proposed promise covers <strong>the usable life remaining for the intended meal.</strong></p>
+    <h2>The proposed flow</h2>
+    <ol class="pitch-flow">
+      <li><strong>Choose when to cook.</strong> Tonight, tomorrow, or a selected cooking time.</li>
+      <li><strong>See eligible choices.</strong> Show products and delivery slots that can meet that requirement.</li>
+      <li><strong>Allocate an eligible batch.</strong> Use actual expiry, release and quality information under approved storage rules.</li>
+      <li><strong>Recheck before dispatch.</strong> If the promise changes, explain it and offer an explicit choice to the customer.</li>
+    </ol>
+    <div class="callout">
+      <strong>For example: cooking tomorrow at 7 p.m.</strong>
+      <p>If the batch available for an early delivery cannot cover that meal, offer a later delivery with an eligible batch. The earlier-dated stock can still serve customers cooking sooner, where approved rules allow.</p>
+      <a href="./#demo">Try this scenario in the demo ↗</a>
+    </div>
+    <h2>Why this could create value</h2>
+    <div class="pitch-values">
+      <article><h3>Conversion</h3><p>Give planned-meal buyers confidence to purchase by answering their freshness question before checkout.</p></article>
+      <article><h3>Inventory efficiency</h3><p>Match earlier-dated eligible stock with customers cooking sooner, preserving later-dated stock for later meals.</p></article>
+      <article><h3>Repeat purchasing</h3><p>Make freshness a useful, verifiable part of the buying experience that customers can return for.</p></article>
+    </div>
+    <p class="caption">These are hypotheses to test. The prototype establishes no revenue uplift or reduction in waste.</p>
+    <h2>The commercial test</h2>
+    <p>First confirm planned-meal demand, current app capabilities and reliable batch data. Then run a bounded pilot: measure delivered-order conversion and repeat purchasing alongside contribution after extra picking constraints, fulfillment costs, waste, refunds and guarantee costs.</p>
+    <p><strong>Reject the idea</strong> if customers mostly cook immediately, the capability already exists, or the added costs erase the benefit.</p>
+    <h2>What is already built</h2>
+    <p>A working customer-flow prototype and Java 21 reference API demonstrate cooking-time eligibility, alternate delivery slots, earliest eligible batch selection, expiring stock holds and rejection after a batch’s quality status changes. The reference also covers concurrent reservations, idempotent retries and quote/cart binding.</p>
+    <p class="caption">The hosted demo runs a browser reference model. The downloadable source runs the Java API locally. All inventory and policy parameters are simulated. The prototype rechecks at acceptance; production dispatch checks would require fulfillment integration and approved operating rules.</p>
+    <div class="pitch-actions">
+      <a class="outline-link" href="./#demo">Try the interactive demo ↗</a>
+      <a href="https://github.com/agwlprince617/licious-freshness-prototype" target="_blank" rel="noopener noreferrer">View source ↗</a>
+      <a href="./source.zip">Download source and tests ↗</a>
+    </div>
+    <div class="pitch-request">
+      <h2>The question for the team</h2>
+      <p>Is this an unmet customer need worth a bounded experiment, or does it overlap with work already underway? I would value feedback from a product or engineering owner and remain interested in contributing as a Java Backend Engineer.</p>
+    </div>
+  </main>
+  <footer class="wrap"><span>Independent candidate concept · Prepared 7 November 2026</span><span>No order, payment or customer data.</span></footer>
+</body>
+</html>
